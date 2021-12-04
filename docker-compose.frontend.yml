@@ -1,0 +1,87 @@
+version: "3.3"
+services:
+  frontend-loadbalancer:
+    build: ./loadbalancer/frontend/
+    ports:
+      - "4000:80"
+    depends_on:
+      - frontend1
+      - frontend2
+      - frontend3
+      - frontend4
+      - frontend5
+      - frontend6
+      - frontend7
+      - frontend8
+      - frontend9
+      - frontend10
+  frontend1:
+    build:
+      context: ./todo-app/
+      args:
+        - API=
+    ports:
+      - "4001:80"
+  frontend2:
+    build:
+      context: ./todo-app/
+      args:
+        - API=
+    ports:
+      - "4002:80"
+  frontend3:
+    build:
+      context: ./todo-app/
+      args:
+        - API=
+    ports:
+      - "4003:80"
+  frontend4:
+    build:
+      context: ./todo-app/
+      args:
+        - API=
+    ports:
+      - "4004:80"
+  frontend5:
+    build:
+      context: ./todo-app/
+      args:
+        - API=
+    ports:
+      - "4005:80"
+  frontend6:
+    build:
+      context: ./todo-app/
+      args:
+        - API=
+    ports:
+      - "4006:80"
+  frontend7:
+    build:
+      context: ./todo-app/
+      args:
+        - API=
+    ports:
+      - "4007:80"
+  frontend8:
+    build:
+      context: ./todo-app/
+      args:
+        - API=
+    ports:
+      - "4008:80"
+  frontend9:
+    build:
+      context: ./todo-app/
+      args:
+        - API=
+    ports:
+      - "4009:80"
+  frontend10:
+    build:
+      context: ./todo-app/
+      args:
+        - API=
+    ports:
+      - "4010:80"
