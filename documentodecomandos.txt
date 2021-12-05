@@ -1,11 +1,12 @@
 CLONAR REPOSITORIO Y UBICRSE DENTRO DE LA CARPETA DEL PROYECTO
 
 LEVANTAR BACKENDS:
-docker-compose -f docker-compose.backend.yml
+docker-compose -f docker-compose.backend.yml up -d
 
 HAY QUE HACER LA BASE DE DATOS A LA QUE SE VAN A CONECTAR LOS SERVICIOS DE BACKEND:
 docker exec -it contenedordebd /bin/bash
-cd opt/mssql-tools/bin/ ./sqlcmd -S localhost -U sa -p Eveling123*
+cd opt/mssql-tools/bin/ 
+./sqlcmd -S localhost -U sa -p Eveling123*
 CREATE DATABASE TODOS;
 GO
 USE TODOS;
@@ -26,4 +27,4 @@ PEGAR LA URL COPIADA ANTERIORMENTE Y PEGARLA EN EL VALOR DE LA VARIABLE O ARGUME
 LUEGO GUARDAR Y SALIR PRESIONANDO LA TECLA esc SEGUIDO DE :wq Y DARLE AL ENTER
 
 LEVANTAR FRONTENDS:
-docker-compose -f docker-compose.frontend.yml
+docker-compose -f docker-compose.frontend.yml up -d
